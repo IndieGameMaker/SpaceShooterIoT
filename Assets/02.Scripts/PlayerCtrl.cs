@@ -32,10 +32,10 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("정규화 벡터 dir=" + dir.normalized.magnitude);
 
         // 이동처리
-        transform.Translate(dir.normalized * Time.deltaTime * 0.1f);
+        transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
 
         // 회전처리
-        transform.Rotate(Vector3.up * Time.deltaTime * 100.0f * r);
+        transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r);
 
         // Translate(이동방향 * 속도)
         // transform.Translate(Vector3.forward * 0.1f * v);
