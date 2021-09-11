@@ -20,6 +20,7 @@ public class PlayerCtrl : MonoBehaviour
         // 콘솔뷰에 메시지를 출력
         Debug.Log("h=" + h + ",v=" + v);
 
+        // Translate(이동방향 * 속도)
         transform.Translate(Vector3.forward * 0.1f);
 
         /*
