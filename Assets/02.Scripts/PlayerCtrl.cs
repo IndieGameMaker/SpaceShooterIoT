@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerCtrl : MonoBehaviour
 {
+    /*
+        파스칼 표기법(Pascal Phase) - 클래스, 메소드(함수) 명
+        낙타형 표기법(Camel Phase)  - 변수명
+    */
+
     // 이동속도
-    public float moveSpeed = 8.0f;
+    public float moveSpeed = 8.0f;  // 낙타형 표기법 (Camel)
     // 회전속도
     public float turnSpeed = 100.0f;
 
@@ -22,14 +28,11 @@ public class PlayerCtrl : MonoBehaviour
         float v = Input.GetAxis("Vertical");  // -1.0f ~ 0.0f ~ +1.0f
         float r = Input.GetAxis("Mouse X");
 
-        // 콘솔뷰에 메시지를 출력
-        // Debug.Log("h=" + h + ",v=" + v);
-
         // (전진후진벡터) + (좌우벡터)
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
 
-        Debug.Log("dir=" + dir.magnitude);
-        Debug.Log("정규화 벡터 dir=" + dir.normalized.magnitude);
+        // Debug.Log("dir=" + dir.magnitude);
+        // Debug.Log("정규화 벡터 dir=" + dir.normalized.magnitude);
 
         // 이동처리
         transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
@@ -38,9 +41,6 @@ public class PlayerCtrl : MonoBehaviour
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r);
 
         // Translate(이동방향 * 속도)
-        // transform.Translate(Vector3.forward * 0.1f * v);
-        // transform.Translate(Vector3.right * 0.1f * h);
-
         /*
             정규화 벡터(Normalized Vector), 단위 벡터(Unit Vector)
 
