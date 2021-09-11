@@ -10,6 +10,8 @@ public class PlayerCtrl : MonoBehaviour
         낙타형 표기법(Camel Phase)  - 변수명
     */
 
+    private Animation anim;
+
     // 이동속도
     public float moveSpeed = 8.0f;  // 낙타형 표기법 (Camel)
     // 회전속도
@@ -18,7 +20,8 @@ public class PlayerCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // 컴포넌트를 추출해서 변수에 대입
+        anim = GetComponent<Animation>();
     }
 
     // Update is called once per frame
