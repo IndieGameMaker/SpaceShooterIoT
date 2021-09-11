@@ -55,3 +55,15 @@ public class PlayerCtrl : MonoBehaviour
     }
 
 }
+
+
+/*
+    Animation Type
+
+    - Legacy : 하위 호환성 , Code (Animation 컴포넌트)
+
+    - Mecanim : Visual Editor (Animator 컴포넌트)
+        - Generic
+        - Humanoid : Retargetting, 2족 보행, 15개 필수 Born
+
+*/
