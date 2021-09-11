@@ -22,6 +22,8 @@ public class PlayerCtrl : MonoBehaviour
     {
         // 컴포넌트를 추출해서 변수에 대입
         anim = GetComponent<Animation>();
+
+        anim.Play("Idle");
     }
 
     // Update is called once per frame
