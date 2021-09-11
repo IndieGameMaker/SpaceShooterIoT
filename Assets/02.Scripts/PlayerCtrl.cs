@@ -16,9 +16,10 @@ public class PlayerCtrl : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
         float v = Input.GetAxis("Vertical");  // -1.0f ~ 0.0f ~ +1.0f
+        float r = Input.GetAxis("Mouse X");
 
         // 콘솔뷰에 메시지를 출력
-        Debug.Log("h=" + h + ",v=" + v);
+        // Debug.Log("h=" + h + ",v=" + v);
 
         // (전진후진벡터) + (좌우벡터)
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
@@ -26,7 +27,11 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("dir=" + dir.magnitude);
         Debug.Log("정규화 벡터 dir=" + dir.normalized.magnitude);
 
+        // 이동처리
         transform.Translate(dir.normalized * 0.1f);
+
+        // 회전처리
+        transform.Rotate(Vector3.up * 100.0f * r);
 
         // Translate(이동방향 * 속도)
         // transform.Translate(Vector3.forward * 0.1f * v);
