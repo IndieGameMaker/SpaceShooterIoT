@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    // 이동속도
+    public float moveSpeed = 8.0f;
+    // 회전속도
+    public float turnSpeed = 100.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +32,10 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("정규화 벡터 dir=" + dir.normalized.magnitude);
 
         // 이동처리
-        transform.Translate(dir.normalized * 0.1f);
+        transform.Translate(dir.normalized * Time.deltaTime * 0.1f);
 
         // 회전처리
-        transform.Rotate(Vector3.up * 100.0f * r);
+        transform.Rotate(Vector3.up * Time.deltaTime * 100.0f * r);
 
         // Translate(이동방향 * 속도)
         // transform.Translate(Vector3.forward * 0.1f * v);
