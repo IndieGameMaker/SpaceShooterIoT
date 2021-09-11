@@ -20,9 +20,17 @@ public class PlayerCtrl : MonoBehaviour
         // 콘솔뷰에 메시지를 출력
         Debug.Log("h=" + h + ",v=" + v);
 
+        // (전진후진벡터) + (좌우벡터)
+        Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
+
+        Debug.Log("dir=" + dir.magnitude);
+        Debug.Log("정규화 벡터 dir=" + dir.normalized.magnitude);
+
+        transform.Translate(dir.normalized * 0.1f);
+
         // Translate(이동방향 * 속도)
-        transform.Translate(Vector3.forward * 0.1f * v);
-        transform.Translate(Vector3.right * 0.1f * h);
+        // transform.Translate(Vector3.forward * 0.1f * v);
+        // transform.Translate(Vector3.right * 0.1f * h);
 
         /*
             정규화 벡터(Normalized Vector), 단위 벡터(Unit Vector)
