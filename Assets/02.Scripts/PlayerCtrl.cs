@@ -21,7 +21,7 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("h=" + h + ",v=" + v);
 
         // Translate(이동방향 * 속도)
-        transform.Translate(Vector3.forward * 0.1f);
+        transform.Translate(Vector3.forward * 0.1f * v);
 
         /*
             정규화 벡터(Normalized Vector), 단위 벡터(Unit Vector)
