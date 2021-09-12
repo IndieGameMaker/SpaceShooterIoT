@@ -52,9 +52,13 @@ public class FireCtrl : MonoBehaviour
         Random.Range(0, 3) ==> 0, 1, 2 
         Random.Range(0.0f, 3.0f) ==> 0.0f ~ 3.0f
         */
-
+        // 텍스처의 오프셋을 변경
         Vector2 offset = new Vector2(Random.Range(0, 2) * 0.5f, Random.Range(0, 2) * 0.5f);
         muzzleFlash.material.mainTextureOffset = offset;
+
+        // 크기변경
+        float scale = Random.Range(1.0f, 3.0f);
+        muzzleFlash.transform.localScale = Vector3.one * scale; // new Vector3(scale, scale, scale)
 
         // MeshRenderer 컴포넌트를 활성화
         muzzleFlash.enabled = true;
