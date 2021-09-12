@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class FireCtrl : MonoBehaviour
 {
+    [SerializeField]
     private new AudioSource audio;
 
     public GameObject bulletPrefab;
