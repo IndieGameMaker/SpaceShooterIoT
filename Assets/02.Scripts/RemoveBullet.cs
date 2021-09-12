@@ -37,4 +37,10 @@ public class RemoveBullet : MonoBehaviour
 
     오일러회전(Euler) x -> y -> z
     짐벌락(Gimbal Lock) : 김벌락
+
+
+    Audio
+
+    AudioListner : 소리를 듣는 역할, 씬에 1개만 존재해야 함.
+    AudioSource  : 소리를 발생시키는 역할, 복수가능.
 */

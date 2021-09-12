@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class FireCtrl : MonoBehaviour
 {
+    private new AudioSource audio;
+
     public GameObject bulletPrefab;
     public Transform firePos;
+    public AudioClip fireSfx;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
