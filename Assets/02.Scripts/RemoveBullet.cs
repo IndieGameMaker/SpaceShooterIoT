@@ -23,7 +23,8 @@ public class RemoveBullet : MonoBehaviour
             //쿼터니언 타입의 각도
             Quaternion rot = Quaternion.LookRotation(_normal);
 
-            Instantiate(sparkEffect, cp.point, rot);
+            GameObject obj = Instantiate(sparkEffect, cp.point, rot);
+            Destroy(obj, 0.4f);
         }
     }
 }
