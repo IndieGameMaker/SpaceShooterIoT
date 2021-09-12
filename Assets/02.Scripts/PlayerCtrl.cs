@@ -60,6 +60,14 @@ public class PlayerCtrl : MonoBehaviour
         {
             anim.CrossFade("RunB", 0.3f);
         }
+        else if (h >= 0.1f) // 오른쪽
+        {
+            anim.CrossFade("RunR", 0.3f);
+        }
+        else if (h <= -0.1f) // 왼쪽
+        {
+            anim.CrossFade("RunL", 0.3f);
+        }
     }
 
 }
