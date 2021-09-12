@@ -17,7 +17,14 @@ public class RemoveBullet : MonoBehaviour
             Debug.Log("총알 충돌했음 !!!");
             Destroy(coll.gameObject);
 
-            Instantiate(sparkEffect, coll.GetContact(0).point, Quaternion.identity);
+            ContactPoint cp = coll.GetContact(0);
+            // 충돌한 객체의 법선벡터(반대 방향의 벡터)
+            Vector3 _normal = -cp.normal;
+
+            //쿼터니언 타입의 각도
+            Quaternion rot = Quaternion.LookRotation(_normal);
+
+            Instantiate(sparkEffect, cp.point, rot);
         }
     }
 }
@@ -25,4 +32,9 @@ public class RemoveBullet : MonoBehaviour
     OnCollisionEnter    1
     OnCollisionStay     n
     OnCollisionExit     1
+
+    쿼터니언 (Quaternion) 사원수 (x, y, z, w) : 복소수 4차원벡터
+
+    오일러회전(Euler) x -> y -> z
+    짐벌락(Gimbal Lock) : 김벌락
 */
