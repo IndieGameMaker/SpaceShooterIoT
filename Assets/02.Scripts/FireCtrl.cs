@@ -42,7 +42,7 @@ public class FireCtrl : MonoBehaviour
         audio.PlayOneShot(fireSfx, 0.8f);
 
         // 총구화염 효과
-        ShowMuzzleFlash();
+        StartCoroutine(ShowMuzzleFlash());
     }
 
     IEnumerator ShowMuzzleFlash()
