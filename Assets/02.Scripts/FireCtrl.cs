@@ -21,6 +21,7 @@ public class FireCtrl : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        muzzleFlash.enabled = false;
     }
 
     // Update is called once per frame
@@ -54,6 +55,14 @@ public class FireCtrl : MonoBehaviour
 
         Vector2 offset = new Vector2(Random.Range(0, 2) * 0.5f, Random.Range(0, 2) * 0.5f);
         muzzleFlash.material.mainTextureOffset = offset;
+
+        // MeshRenderer 컴포넌트를 활성화
+        muzzleFlash.enabled = true;
+
+        // Waitting...
+
+        // MeshRenderer 컴포넌트를 비활성화
+        muzzleFlash.enabled = false;
     }
 }
 
