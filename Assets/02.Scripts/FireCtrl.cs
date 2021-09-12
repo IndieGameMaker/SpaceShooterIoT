@@ -12,6 +12,8 @@ public class FireCtrl : MonoBehaviour
     public Transform firePos;
     public AudioClip fireSfx;
 
+    [System.NonSerialized]
+    [HideInInspector]
     public MeshRenderer muzzleFlash;
 
     // Start is called before the first frame update
@@ -37,6 +39,21 @@ public class FireCtrl : MonoBehaviour
         Instantiate(bulletPrefab, firePos.position, firePos.rotation);
         // 사운드 발생
         audio.PlayOneShot(fireSfx, 0.8f);
+
+        // 총구화염 효과
+        ShowMuzzleFlash();
+    }
+
+    void ShowMuzzleFlash()
+    {
+        // (0, 0), (0.5, 0) , (0, 0.5), (0.5, 0.5) 
+        /*
+        Random.Range(0, 3) ==> 0, 1, 2 
+        Random.Range(0.0f, 3.0f) ==> 0.0f ~ 3.0f
+        */
+
+        Vector2 offset = new Vector2(Random.Range(0, 2) * 0.5f, Random.Range(0, 2) * 0.5f);
+        muzzleFlash.material.mainTextureOffset = offset;
     }
 }
 
