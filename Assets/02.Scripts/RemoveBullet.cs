@@ -14,7 +14,6 @@ public class RemoveBullet : MonoBehaviour
         // if (coll.gameObject.tag == "BULLET") ==> Garbage Collection
         if (coll.gameObject.CompareTag("BULLET"))
         {
-            Debug.Log("총알 충돌했음 !!!");
             Destroy(coll.gameObject);
 
             ContactPoint cp = coll.GetContact(0);
