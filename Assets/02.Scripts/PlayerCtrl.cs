@@ -68,6 +68,10 @@ public class PlayerCtrl : MonoBehaviour
         {
             anim.CrossFade("RunL", 0.3f);
         }
+        else
+        {
+            anim.CrossFade("Idle", 0.3f);
+        }
     }
 
 }
