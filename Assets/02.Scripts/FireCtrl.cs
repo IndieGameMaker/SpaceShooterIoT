@@ -45,7 +45,7 @@ public class FireCtrl : MonoBehaviour
         ShowMuzzleFlash();
     }
 
-    void ShowMuzzleFlash()
+    IEnumerator ShowMuzzleFlash()
     {
         // (0, 0), (0.5, 0) , (0, 0.5), (0.5, 0.5) 
         /*
@@ -60,6 +60,7 @@ public class FireCtrl : MonoBehaviour
         muzzleFlash.enabled = true;
 
         // Waitting...
+        yield return new WaitForSeconds(0.2f);
 
         // MeshRenderer 컴포넌트를 비활성화
         muzzleFlash.enabled = false;
