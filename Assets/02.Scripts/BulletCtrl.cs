@@ -14,5 +14,4 @@ public class BulletCtrl : MonoBehaviour
 
         rb.AddRelativeForce(Vector3.forward * 800.0f);
     }
-
 }
