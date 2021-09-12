@@ -21,7 +21,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         // 컴포넌트를 추출해서 변수에 대입
-        anim = GetComponent<Animation>();
+        anim = this.gameObject.GetComponent<Animation>();
 
         anim.Play("Idle");
     }
@@ -45,21 +45,17 @@ public class PlayerCtrl : MonoBehaviour
         // 회전처리
         transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * r);
 
-        // Translate(이동방향 * 속도)
-        /*
-            정규화 벡터(Normalized Vector), 단위 벡터(Unit Vector)
+        // 애니메이션 처리
+        PlayerAnim(h, v);
+    }
 
-            Vector3.forward = Vector3(0, 0, 1)
-            Vector3.up      = Vector3(0, 1, 0)
-            Vector3.right   = Vector3(1, 0, 0)
-
-            Vector3.one = Vector3(1, 1, 1)
-            Vector3.zero = Vector3(0, 0, 0)
-        */
+    void PlayerAnim(float h, float v)
+    {
 
     }
 
 }
+
 
 
 /*
