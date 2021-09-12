@@ -51,7 +51,15 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerAnim(float h, float v)
     {
-
+        if (v >= 0.1f) // 전진
+        {
+            // 애니메이션을 부드럽게 전환
+            anim.CrossFade("RunF", 0.3f);
+        }
+        else if (v <= -0.1f) // 후진
+        {
+            anim.CrossFade("RunB", 0.3f);
+        }
     }
 
 }
