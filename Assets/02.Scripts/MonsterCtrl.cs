@@ -23,6 +23,7 @@ public class MonsterCtrl : MonoBehaviour
     private Transform monsterTr;
 
     private NavMeshAgent agent;
+    private Animator anim;
 
     public bool isDie = false;
 
@@ -32,6 +33,7 @@ public class MonsterCtrl : MonoBehaviour
         playerTr = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
@@ -72,6 +74,8 @@ public class MonsterCtrl : MonoBehaviour
                 case State.IDLE:
                     // 추적 정지
                     agent.isStopped = true;
+                    // Idle 애니메이션으로 되돌아가기
+                    anim.SetBool("IsTrace", false);
                     break;
                 case State.ATTACK:
                     //
@@ -80,6 +84,8 @@ public class MonsterCtrl : MonoBehaviour
                     // 추적 시작
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
+                    // Walk 애니메이션 실행
+                    anim.SetBool("IsTrace", true);
                     break;
                 case State.DIE:
                     //
