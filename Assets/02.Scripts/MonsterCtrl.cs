@@ -134,7 +134,9 @@ public class MonsterCtrl : MonoBehaviour
     void YouWin()
     {
         StopAllCoroutines();
+
         agent.isStopped = true;
+        anim.SetFloat(hashAniSpeed, Random.Range(0.8f, 1.5f));
         anim.SetTrigger(hashPlayerDie);
     }
 }
