@@ -42,14 +42,22 @@ public class GameManager : MonoBehaviour
         monsterPrefab = Resources.Load<GameObject>("Monster");
 
         // 몬스터 생성 함수를 반복 호출
-        InvokeRepeating("CreateMonster", 2.0f, createTime);
+        // InvokeRepeating("CreateMonster", 2.0f, createTime);
+        StartCoroutine(CreateMonster());
     }
 
-    void CreateMonster()
+    IEnumerator CreateMonster()
     {
-        // 위치값을 추출
-        int idx = Random.Range(0, points.Count);
-        // Monster 생성
-        Instantiate(monsterPrefab, points[idx].position, Quaternion.identity);
+        yield return new WaitForSeconds(2.0f);
+
+        while (!isGameOver)
+        {
+            // 위치값을 추출
+            int idx = Random.Range(0, points.Count);
+            // Monster 생성
+            Instantiate(monsterPrefab, points[idx].position, Quaternion.identity);
+
+            yield return new WaitForSeconds(createTime);
+        }
     }
 }
