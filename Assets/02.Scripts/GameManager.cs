@@ -21,11 +21,17 @@ public class GameManager : MonoBehaviour
 
         // Resources 폴더에 있는 Monster Prefab Loading...
         monsterPrefab = Resources.Load<GameObject>("Monster");
+
+        // 몬스터 생성 함수를 반복 호출
+        InvokeRepeating("CreateMonster", 2.0f, createTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    void CreateMonster()
     {
+        // 위치값을 추출
+        int idx = Random.Range(0, points.Count);
+        // Monster 생성
+        Instantiate(monsterPrefab, points[idx].position, Quaternion.identity);
 
     }
 }

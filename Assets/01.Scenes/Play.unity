@@ -686,7 +686,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.0265958, y: 1}
+    m_SensorSize: {x: 2.7393618, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1875,6 +1875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118ea2fa50cad45ba87f4690894cea2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: []
+  monsterPrefab: {fileID: 0}
+  createTime: 3
 --- !u!4 &1405564949
 Transform:
   m_ObjectHideFlags: 0
