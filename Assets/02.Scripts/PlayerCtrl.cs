@@ -15,7 +15,8 @@ public class PlayerCtrl : MonoBehaviour
     // 이동속도
     public float moveSpeed = 8.0f;  // 낙타형 표기법 (Camel)
     // 회전속도
-    public float turnSpeed = 100.0f;
+    public float _turnSpeed = 100.0f;
+    private float turnSpeed;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -27,7 +28,7 @@ public class PlayerCtrl : MonoBehaviour
 
         turnSpeed = 0.0f;
         yield return new WaitForSeconds(0.3f);
-        turnSpeed = 100.0f;
+        turnSpeed = _turnSpeed;
     }
 
     // Update is called once per frame
