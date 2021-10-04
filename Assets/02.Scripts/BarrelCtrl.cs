@@ -16,6 +16,7 @@ public class BarrelCtrl : MonoBehaviour
     void Start()
     {
         expEffect = Resources.Load<GameObject>("BigExplosionEffect");
+        renderer = GetComponentInChildren<MeshRenderer>();
     }
 
     void OnCollisionEnter(Collision coll)
