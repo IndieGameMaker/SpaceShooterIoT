@@ -19,7 +19,9 @@ public class MonsterCtrl : MonoBehaviour
     public float attackDist = 2.0f; //공격 사정거리
     public float traceDist = 10.0f; //추적 사정거리
 
-    public Transform playerTr;
+    private Transform playerTr;
+    private Transform monsterTr;
+
     private NavMeshAgent agent;
 
     public bool isDie = false;
@@ -28,6 +30,7 @@ public class MonsterCtrl : MonoBehaviour
     void Start()
     {
         playerTr = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        monsterTr = GetComponent<Transform>(); // monsterTr = transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -42,7 +45,8 @@ public class MonsterCtrl : MonoBehaviour
     {
         while (isDie == false)
         {
-            //
+            // 몬스터와 주인공간의 거리를 계산
+            float distance = Vector3.Distance()
             yield return new WaitForSeconds(0.3f);
         }
     }
