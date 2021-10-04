@@ -17,6 +17,10 @@ public class BarrelCtrl : MonoBehaviour
     {
         expEffect = Resources.Load<GameObject>("BigExplosionEffect");
         renderer = GetComponentInChildren<MeshRenderer>();
+
+        int idx = Random.Range(0, textures.Length); // Random.Range(0, 3) => 0, 1, 2
+        // 하위에 있는 MeshRenderer에 연결된 머티리얼의 텍스처를 변경
+        renderer.material.mainTexture = textures[idx];
     }
 
     void OnCollisionEnter(Collision coll)
