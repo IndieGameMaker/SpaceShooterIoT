@@ -8,6 +8,10 @@ public class BarrelCtrl : MonoBehaviour
     private int hitCount = 0;
     // 폭발효과 프리팹
     [SerializeField] private GameObject expEffect;
+    // 텍스처를 저장하기 위한 배열
+    public Texture[] textures;
+    // 하위에 있는 MeshRenderer 컴포넌트를 저장하기 위한 변수
+    public MeshRenderer renderer;
 
     void Start()
     {
