@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
             isGameOver = value;
             if (isGameOver == true)
             {
-                CancelInvoke("CreateMonster");
+                // CancelInvoke("CreateMonster");
             }
         }
     }
