@@ -34,6 +34,7 @@ public class MonsterCtrl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     // 몬스터의 상태를 체크하는 코루틴
@@ -69,13 +70,16 @@ public class MonsterCtrl : MonoBehaviour
             switch (state)
             {
                 case State.IDLE:
-                    //
+                    // 추적 정지
+                    agent.isStopped = true;
                     break;
                 case State.ATTACK:
                     //
                     break;
                 case State.TRACE:
-                    //
+                    // 추적 시작
+                    agent.SetDestination(playerTr.position);
+                    agent.isStopped = false;
                     break;
                 case State.DIE:
                     //
