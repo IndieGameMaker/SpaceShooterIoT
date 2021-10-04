@@ -125,6 +125,7 @@ public class MonsterCtrl : MonoBehaviour
         isDie = true;
         StopAllCoroutines();
         agent.isStopped = true;
+        anim.SetTrigger(hashDie);
     }
 }
 
