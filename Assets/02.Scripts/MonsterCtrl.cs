@@ -60,6 +60,31 @@ public class MonsterCtrl : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
     }
+
+    // 몬스터의 상태값에 따라서 행동을 처리하는 코루틴
+    IEnumerator MonsterAction()
+    {
+        while (!isDie)
+        {
+            switch (state)
+            {
+                case State.IDLE:
+                    //
+                    break;
+                case State.ATTACK:
+                    //
+                    break;
+                case State.TRACE:
+                    //
+                    break;
+                case State.DIE:
+                    //
+                    break;
+            }
+
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
 }
 
 /*
