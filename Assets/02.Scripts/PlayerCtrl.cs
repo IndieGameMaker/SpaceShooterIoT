@@ -89,7 +89,7 @@ public class PlayerCtrl : MonoBehaviour
     */
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("PUNCH"))
+        if (currHp > 0.0f && coll.CompareTag("PUNCH"))
         {
             currHp -= 10.0f;
             if (currHp <= 0.0f)
@@ -104,6 +104,11 @@ public class PlayerCtrl : MonoBehaviour
         //Debug.Log("주인공 사망 !!!");
         // 스테이지에 있는 모든 몬스터를 검색(Tag)
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        foreach (GameObject monster in monsters)
+        {
+            monster.SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
+        }
     }
 
 }
