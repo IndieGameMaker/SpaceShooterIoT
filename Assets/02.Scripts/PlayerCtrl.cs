@@ -101,7 +101,9 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-        Debug.Log("주인공 사망 !!!");
+        //Debug.Log("주인공 사망 !!!");
+        // 스테이지에 있는 모든 몬스터를 검색(Tag)
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
     }
 
 }

@@ -1,3 +1,4 @@
+#pragma warning disable CS0108
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class BarrelCtrl : MonoBehaviour
     [SerializeField] private GameObject expEffect;
     // 텍스처를 저장하기 위한 배열
     public Texture[] textures;
+
+
+    // 하위에 있는 MeshRenderer 컴포넌트를 저장하기 위한 변수
     // 하위에 있는 MeshRenderer 컴포넌트를 저장하기 위한 변수
     public MeshRenderer renderer;
 
