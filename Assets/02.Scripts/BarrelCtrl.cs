@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class BarrelCtrl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // 총알의 충돌 횟수를 누적
+    private int hitCount = 0;
+
+    void OnCollisionEnter(Collision coll)
     {
-        
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            if (++hitCount == 3)
+            {
+                // 드럼통을 폭발
+                ExpBarrel();
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ExpBarrel()
     {
-        
+        Rigidbody rb = this.gameObject.AddComponent<Rigidbody>();
+        rb.AddForce(Vector3.up * 1200.0f);
     }
 }
