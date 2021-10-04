@@ -22,9 +22,13 @@ public class PlayerCtrl : MonoBehaviour
     private float initHp = 100.0f; // 초기 생명수치
     private float currHp = 100.0f; // 현재 생명수치
 
+    private GameManager gameManager;
+
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         // 컴포넌트를 추출해서 변수에 대입
         anim = this.gameObject.GetComponent<Animation>();
 
@@ -101,6 +105,8 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
+        gameManager.IsGameOver = true;
+
         //Debug.Log("주인공 사망 !!!");
         // 스테이지에 있는 모든 몬스터를 검색(Tag)
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");

@@ -11,6 +11,25 @@ public class GameManager : MonoBehaviour
     // 몬스터의 생성 주기
     public float createTime = 3.0f;
 
+    private bool isGameOver = false;
+
+    // C# Properties
+    public bool IsGameOver
+    {
+        get
+        {
+            return isGameOver;
+        }
+        set
+        {
+            isGameOver = value;
+            if (isGameOver == true)
+            {
+                CancelInvoke("CreateMonster");
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +51,5 @@ public class GameManager : MonoBehaviour
         int idx = Random.Range(0, points.Count);
         // Monster 생성
         Instantiate(monsterPrefab, points[idx].position, Quaternion.identity);
-
     }
 }
