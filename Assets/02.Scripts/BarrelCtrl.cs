@@ -6,6 +6,13 @@ public class BarrelCtrl : MonoBehaviour
 {
     // 총알의 충돌 횟수를 누적
     private int hitCount = 0;
+    // 폭발효과 프리팹
+    [SerializeField] private GameObject expEffect;
+
+    void Start()
+    {
+        expEffect = Resources.Load<GameObject>("BigExplosionEffect");
+    }
 
     void OnCollisionEnter(Collision coll)
     {
@@ -25,5 +32,6 @@ public class BarrelCtrl : MonoBehaviour
         rb.AddForce(Vector3.up * 1200.0f);
 
         Destroy(this.gameObject, 2.0f);
+        Instantiate(expEffect, transform.position, Quaternion.identity);
     }
 }
