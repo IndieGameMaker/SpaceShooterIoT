@@ -32,6 +32,7 @@ public class MonsterCtrl : MonoBehaviour
     private int hashHit = Animator.StringToHash("Hit");
     private int hashDie = Animator.StringToHash("Die");
     private int hashPlayerDie = Animator.StringToHash("PlayerDie");
+    private int hashAniSpeed = Animator.StringToHash("AniSpeed");
 
     private float hp = 100.0f;
 
