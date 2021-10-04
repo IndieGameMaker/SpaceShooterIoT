@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
         GameObject spg = GameObject.Find("SpawnPointGroup");
         //2. SpawnPointGroup 하위에 있는 모든 Tranform 컴포넌트를 추출
         spg.GetComponentsInChildren<Transform>(points);
+
+        // Resources 폴더에 있는 Monster Prefab Loading...
+        monsterPrefab = Resources.Load<GameObject>("Monster");
     }
 
     // Update is called once per frame
