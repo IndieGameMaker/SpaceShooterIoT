@@ -87,7 +87,7 @@ public class MonsterCtrl : MonoBehaviour
                 case State.ATTACK:
                     // Attack 애니메이션 실행
                     anim.SetBool(hashAttack, true);
-                    monsterTr.LookAt(playerTr.position);
+                    //monsterTr.LookAt(playerTr.position);
                     break;
                 case State.TRACE:
                     // 추적 시작
