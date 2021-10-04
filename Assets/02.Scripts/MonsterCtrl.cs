@@ -16,8 +16,13 @@ public class MonsterCtrl : MonoBehaviour
     // 몬스터의 상태를 저장할 변수
     public State state = State.IDLE;
 
+    public float attackDist = 2.0f; //공격 사정거리
+    public float traceDist = 10.0f; //추적 사정거리
+
     public Transform playerTr;
     private NavMeshAgent agent;
+
+    public bool isDie = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,16 @@ public class MonsterCtrl : MonoBehaviour
     void Update()
     {
         agent.SetDestination(playerTr.position);
+    }
+
+    // 몬스터의 상태를 체크하는 코루틴
+    IEnumerator CheckMonsterState()
+    {
+        while (isDie == false)
+        {
+            //
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 }
 
